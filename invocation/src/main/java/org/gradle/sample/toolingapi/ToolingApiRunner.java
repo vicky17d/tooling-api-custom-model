@@ -16,11 +16,14 @@ public class ToolingApiRunner {
 
         try (ProjectConnection connection = connector.connect()) {
             ModelBuilder<CustomModel> customModelBuilder = connection.model(CustomModel.class);
-            customModelBuilder.withArguments("--init-script", "init.gradle"); // Can use if applying plugin on the fly for a project
+            // Can use if applying plugin on the fly for a project
+            // Uncomment it only when :sample:init.gradle exists.
+            //customModelBuilder.withArguments("--init-script", "init.gradle");
             CustomModel model = customModelBuilder.get();
             System.out.println("Project applies JavaPlugin? " + model.hasPlugin(JavaPlugin.class));
             System.out.println("Project applies Groovy? " + model.hasPlugin(GroovyPlugin.class));
             System.out.println("##########################");
+
 
         }
     }
