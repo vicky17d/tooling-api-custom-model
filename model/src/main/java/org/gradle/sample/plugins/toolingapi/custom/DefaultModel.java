@@ -13,4 +13,8 @@ public class DefaultModel implements Serializable {
     public boolean hasPlugin(Class type) {              
         return pluginClassNames.contains(type.getName());
     }
+
+    public List<String> getAllPlugins() {
+        return pluginClassNames;
+    }
 }

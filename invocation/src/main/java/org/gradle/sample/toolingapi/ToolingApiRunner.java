@@ -22,8 +22,10 @@ public class ToolingApiRunner {
             CustomModel model = customModelBuilder.get();
             System.out.println("Project applies JavaPlugin? " + model.hasPlugin(JavaPlugin.class));
             System.out.println("Project applies Groovy? " + model.hasPlugin(GroovyPlugin.class));
-            System.out.println("##########################");
-
+            System.out.println("\n>>>> Listing all plugins applied to the project");
+            System.out.println("-------------------------------------------------");
+            model.getAllPlugins().forEach(System.out::println);
+            System.out.println("-------------------------------------------------");
 
         }
     }
