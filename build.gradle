@@ -8,4 +8,11 @@ subprojects {
     dependencies {
         compile gradleApi()
     }
+    publishing {
+        publications {
+            maven(MavenPublication) {
+                from components.java
+            }
+        }
+    }
 }
