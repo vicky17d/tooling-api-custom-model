@@ -1,1 +1,14 @@
+buildscript {
+    repositories {
+        mavenLocal()
+    }
+    dependencies {
+        classpath 'org.gradle.sample.plugins.toolingapi:plugin:1.0'  //Required: need this in build script to apply plugins from mavenLocal
+    }
+}
+
+//apply plugin: 'org.gradle.sample.plugins.toolingapi:plugin:1.0'   // this won't work for plugins from mavenLocal
+//apply plugin: org.gradle.sample.plugins.toolingapi.custom.ToolingApiCustomModelPlugin  //Required: provide package name with class name for plugins from mavenLocal using dependencies classpath
+
 apply plugin: 'java'
+apply plugin: 'groovy'

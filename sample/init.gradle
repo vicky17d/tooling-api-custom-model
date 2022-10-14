@@ -1,10 +1,7 @@
 initscript {
     repositories {
-        maven { 
-            url new File('../repo').toURI().toURL()
-        }
+        mavenLocal()
     }
-
     dependencies {
         classpath 'org.gradle.sample.plugins.toolingapi:plugin:1.0'
     }

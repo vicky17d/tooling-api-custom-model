@@ -1,3 +1,29 @@
-dependencies {
-    compile project(':model')
+
+
+plugins {
+    id 'java-gradle-plugin'
+    id 'maven-publish' // required for pTML
 }
+repositories {
+    mavenLocal()
+}
+
+group = 'org.gradle.sample.plugins.toolingapi'
+version = '1.0'
+
+dependencies {
+    compile 'org.gradle.sample.plugins.toolingapi:model:1.0'
+}
+gradlePlugin {
+    plugins {
+        thisNameDoesNotMatter {
+            id = 'ToolingApiCustomModelPlugin'
+            implementationClass = 'org.gradle.sample.plugins.toolingapi.custom.ToolingApiCustomModelPlugin'
+        }
+
+    }
+}
+
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8

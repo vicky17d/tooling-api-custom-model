@@ -1,0 +1,7 @@
+//Required for applying plugins from mavenLocal
+pluginManagement {
+    repositories {
+        mavenLocal()
+        gradlePluginPortal()
+    }
+}

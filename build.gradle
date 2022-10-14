@@ -7,19 +7,5 @@ subprojects {
 
     dependencies {
         compile gradleApi()
-    }    
-    
-    publishing {
-        repositories {
-            maven { 
-                url "$rootProject.projectDir/repo"
-            }
-        }
-
-        publications {
-            maven(MavenPublication) {
-                from components.java
-            }
-        }
     }
 }

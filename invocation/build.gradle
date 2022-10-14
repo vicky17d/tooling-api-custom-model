@@ -1,19 +1,22 @@
 apply plugin: 'application'
 
 repositories {
-    maven { 
-        url "$projectDir/../repo"
-    }
+    mavenLocal()
+
     maven {
         url 'https://repo.gradle.org/gradle/libs-releases-local'
     }
     mavenCentral()
 }
-    
+
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+
 dependencies {
     compile 'org.gradle.sample.plugins.toolingapi:model:1.0'
-    compile "org.gradle:gradle-tooling-api:2.1"
-    runtime 'org.slf4j:slf4j-simple:1.7.5'
+    compile 'org.gradle:gradle-tooling-api:5.2.1'
+
+    runtimeOnly 'org.slf4j:slf4j-simple:2.0.3'
 }
 
 mainClassName = 'org.gradle.sample.toolingapi.ToolingApiRunner'
