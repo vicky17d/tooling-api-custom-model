@@ -1,1 +1,3 @@
 include 'model', 'plugin', 'invocation', 'sample'
+include 'standalone-plugin'
+
